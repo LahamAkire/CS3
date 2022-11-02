@@ -1,0 +1,43 @@
+.header {
+	position: sticky;
+	top:0px;
+	border-width: 1px;
+	border-color: black;
+	border-style: solid;
+	background-color: #eeff52;
+}
+.header h2 {
+	text-align: center;
+	padding-bottom: 38px;
+}
+.header a {
+	float:left;
+
+}
+.content {
+	width: 600px;
+	margin:auto;
+	border-width: 1px;
+	border-color: black;
+	border-style: solid;
+	background-color: #eeff52;
+	z-index: 1;
+	margin-top: 100px;
+}
+.pages {
+	float:left;
+	margin:auto;
+	border-width: 1px;
+	border-color: black;
+	border-style: solid;
+	background-color: #eeff52;
+}
+.imageDiv {
+	clear: both;
+	text-align: center;
+}
+body {
+	background: url(../images/bg.jpg);
+	background-attachment:fixed;
+	background-position: center center;
+}
