@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<body onload="genRand()">
+		<p id="randDisplay"></p>
+		</br>
+		<p id="breakdown">Breakdown</p>
+		<script>
+			var rand;
+			var ones;
+			var tens;
+			var hundreds;
+			function genRand(){
+				rand = Math.floor(Math.random()*1001);
+				document.getElementById("randDisplay").innerHTML = "Randomly Generated number:" + rand;
+				ones = rand%10;
+				tens = (rand%100)-ones;
+				hundreds = (rand%1000)-(tens+ones);
+				document.getElementById("breakdown").innerHTML = "Breakdown: " + hundreds + ", " + tens + ", " + ones;
+			}
+		</script>
+	</body>
+</html>
