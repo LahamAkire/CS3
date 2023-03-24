@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> My Online Shop</title>
+		<!-- type in the necessary meta tags -->
+		<style>
+		span {color: blue; text-decoration:underline}
+		button {width: 100px; padding: 5px; background: pink;}
+		</style>
+	
+	</head>
+	<body>
+		<h1> Starter Item Shop </h1>
+		<h2> Please select from the following items </h2>
+		<!--- provide your own 3 items and their prices in the list --->
+		<ol>
+			<li> Health Potions price: 50.00 </li>
+			<li> Boots price: 300.00 </li>
+			<li> Doran's Blade price: 450.00 </li>
+		</ol>
+		<!-- the following will be used to display purchase information -->
+		<p> Item selected : <span id="item"> </span> </p>
+		<p> Qty bought : <span id="qty"> </span> </p>
+		<p> Amount to pay for the item: <span id="bill"> </span> </p>
+		<p> Current Total Bill <span id="tbill"> </span> </p>
+		<button onclick="buyItem()"> Buy an Item </button>
+		<button onclick="erase()"> Clear </button>
+		
+		<script>
+			/* do not forget to include comments in your answer */
+			var amount;
+			var itemSelected;
+			var price; 
+			// ito ung function para makabili ka item
+			function buyItem(){
+			// mga prompts for the input ng user
+				itemSelected = parseInt(prompt("Enter the item number you would like to buy: ", "LEAVE"));
+				amount = parseInt(prompt("How much would you like to buy? : "));
+			//if, else if, and else statements in relation sa pinili ni user
+				if(itemSelected==1){
+					document.getElementById("item").innerHTML = "Health Potion/s";
+					document.getElementById("bill").innerHTML = "50 Gold";
+					price = 50;
+					}
+				else if(itemSelected==2){
+					document.getElementById("item").innerHTML = "Boots";
+					document.getElementById("bill").innerHTML = "300 Gold";
+					price = 300;
+					}
+				else if(itemSelected==3){
+					document.getElementById("item").innerHTML = "Doran's Blade";
+					document.getElementById("bill").innerHTML = "450 Gold";
+					price = 450;
+					}
+				else{
+					document.getElementById("item").innerHTML = "Item is not available";
+					document.getElementById("bill").innerHTML = "N/A";
+					return 0;
+					}
+			// dito ko gicalculate ung total price 
+				var totalBill = price*amount;
+			//dito naman isulat ung amount ng item tsaka ang total bill
+				document.getElementById("qty").innerHTML = amount;
+				document.getElementById("tbill").innerHTML = totalBill + " Gold";
+				}
+			// ito ung mag clear na function
+			function erase(){
+				document.getElementById("item").innerHTML = "";
+				document.getElementById("qty").innerHTML = " ";
+				document.getElementById("bill").innerHTML = " ";
+				document.getElementById("tbill").innerHTML = " ";
+				}
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Car Deprecation Calculator</title>
+		<!-- provide the necessary meta tags -->
+        <style>
+        	body {background: lightblue; 
+            	font-family: arial;
+                color: navy;
+            }
+            button {padding: 10px; background:violet }
+            span {color: maroon}
+        </style>
+
+	</head>
+<body>
+	<h1> Car Depreciation Calculator </h1>
+	<h2> Your Car Model: <span id="model"> </span></h2>
+    <h2> Car Cost: <span id="cost"> </span></h2>
+    <h2> Age of your Car: <span id="age"> </span></h2>
+    <h2> Good Condition?: <span id="condition"> </span></h2>
+    <h2> Your Car's Current Market Value <span id="currentvalue"> </span></h2>
+    
+    <button onclick="enterCar()"> Enter your Car information </button>
+    <script>
+    	//this the function for user input//
+    	function enterCar() {
+        	carmodel = prompt("Enter Car Model");
+            carcost = prompt("Enter Cost of the Car");
+            carage = prompt("How old is your car?");
+            good = confirm("In Good Condition? Ok for Yes / Cancel for No");
+            model.innerHTML = carmodel;
+            cost.innerHTML = carcost;
+            age.innerHTML = carage;
+            condition.innerHTML = (good) ? "Yes" : "No";      
+            computeMarketValue(parseFloat(cost),parseFloat(age),good); // create this function 
+        }
+		//ito ung function para macalculate ung Market Value ng car based on the criteria//
+		function computeMarketValue(){
+			//for if the car is older than 10 years//
+			if(carage>10){
+				var cmv = 70000
+				//the nested if and else are for if the car is in good condition or not//
+				if(good==true){
+					currentvalue.innerHTML = cmv;
+					}
+				else{
+					currentvalue.innerHTML = cmv - (cmv*0.10);
+					}
+				}
+			// for if the car is older than or 8 years old//
+			else if(carage<10&&carage>7){
+				var cmv = 100000;
+				if(good==true){
+					currentvalue.innerHTML = cmv;
+					}
+				else{
+					currentvalue.innerHTML = cmv - (cmv*0.10);
+					}
+				}
+			// for if the car is older than or is 5 years old//
+			else if(carage<8&&carage>4){
+				var cmv = carcost*0.75;
+				if(good==true){
+					currentvalue.innerHTML = carcost - cmv;
+				}
+				else{
+					currentvalue.innerHTML = cmv - (cmv*0.10);
+					}
+			}
+			//for if the car is younger than 5 years//
+			else{
+				var cmv = carcost*0.5;
+				if(good==true){
+					currentvalue.innerHTML = carcost - cmv;
+				}
+				else{
+					currentvalue.innerHTML = cmv - (cmv*0.10);
+					}
+				}
+		}
+    </script>
+    
+</body>
+</html>
+

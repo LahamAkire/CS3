@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Toss coin</title>
+		<!-- provide the necessary meta tags -->
+        <style>
+        	body {background: navy; 
+            	text-align: center;
+            	font-family: arial;
+                color: white;
+            }
+            button {padding: 10px; background:violet }
+            span {color: yellow}
+            #coin, h5 {color: yellow; }
+            #coin { background: gray; 
+            	width: 25px; 
+                height: 25px;
+                padding: 25px;          
+                border: 5px dashed darkgray;
+                border-radius: 50%;
+                margin: 0 auto;
+                
+            }
+            
+        </style>
+
+	</head>
+	<body onload="getGuess()">
+        <h1> Heads or Tail? </h1>
+        <h2 onclick="getGuess()"> Click here to change your Guess: <span id="guess"> </span></h2>
+        <h2 id="coin" onclick="flip()"></span></h2>   
+        <h5> Click on the coin above to randomly change its face and compare with your guess </h5> 
+        <script>
+            var getGuess = function() {
+                uGuess = prompt("Type H for head and T for tail","H");
+                uGuess.toUpperCase; // converting to an uppercase letter
+                (uGuess != "H" && uGuess != "T") ?	alert("Wrong Input"):
+                    guess.innerHTML = uGuess;
+            }
+			//this is the function that is rendered for when the coin is clicked//
+			function flip(){
+				//generation of a random number either 1 or 0 representing heads or tails//
+				let comp = Math.floor(Math.random()*2);
+				console.log(comp); // made for testing
+				//this set of if and else statements are for displaying if the coin landed heads or tails based on the random number above//
+				if(comp==1){
+					document.getElementById("coin").innerHTML = "H";
+					}
+				else{
+					document.getElementById("coin").innerHTML = "T";
+				}
+				//this set of if and else statements are for checking if the user's guess was right or wrong//
+				if((comp==1&&uGuess=="H")||(comp==0&&uGuess=="T")){
+					alert("You guessed it right!");
+				}
+				else{
+					alert("You got it wrong :<");
+					}
+			}
+			
+        </script>
+	</body>
+</html>
+

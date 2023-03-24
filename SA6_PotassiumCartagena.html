@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>One Time Password </title>
+		<meta charset="utf-8">
+        <style>
+        	body {background: lightblue; 
+            	text-align: center;
+            	font-family: arial;
+                color: navy;
+            }
+            button {padding: 10px; background:violet }
+            a {font-size: 0.5em; color: maroon}
+        </style>
+
+	</head>
+	<body onload="displayPin()">
+		<h1> Final Verification Step </h1>
+		<h2> Current OTP: <span id="otp"> _ _ _ _ _ _ </span> <a onclick="simp()" href=""> New OTP </a></h2>
+		<button onclick="button()"> Enter the OTP as shown above </button>
+    
+		<script>
+			var x;	
+			
+			//for loop for creating the otp//
+
+			var pin = (length = 4) => {
+				var otp = ''
+				
+				for (var i = 0; i < length; i++) {
+				otp = otp + Math.floor(Math.random() * 10)
+			}
+
+			return otp
+			}
+			function pin(){
+				otp.innerHTML = x;
+				}
+			//function para sa pagdisplay ng otp//
+			function displayPin(){
+				x = pin(6);
+				otp.innerHTML = x;
+				}
+			//ito ang function sa onclick para ma-input ni user ang OTP at ma-check kung tama//
+			function button(){
+				var y = prompt("Enter Your OTP");
+				if(y == x){
+					window.open("https://twitter.com/_Tercx/status/1637656398879416321");
+				}
+				else{
+					alert("The OTP You Entered Is Incorrect");
+				displayPin();
+				}
+				}
+
+		</script>
+	</body>
+</html>
